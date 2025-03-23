@@ -9,7 +9,7 @@ import Header from "./components/header";
 import TracksPage from "./components/tracksShelf";
 import styles from "./home.module.css";
 
-export default function App({ Component, pageProps }: AppProps) {
+function App() {
   const { isLoggedIn, profile } = useAuth();
   const router = useRouter();
 
@@ -38,3 +38,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </div>
   );
 }
+
+export default App;
