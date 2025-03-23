@@ -1,7 +1,7 @@
 // pages/callback.tsx
 "use client";
 
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 import { useAuth } from "../context/AuthContext";
@@ -10,9 +10,9 @@ const CallbackPage = () => {
   const { login } = useAuth();
   const router = useRouter(); // For navigation
   const searchParams = useSearchParams(); // Access search params
-  
+
   const SPOTIFY_CLIENT_ID = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID!;
-  const REDIRECT_URI = 'http://localhost:3000/callback';
+  const REDIRECT_URI = "http://localhost:3000/callback";
 
   useEffect(() => {
     const code = searchParams.get("code");
@@ -68,4 +68,12 @@ const CallbackPage = () => {
   return <div>Loading...</div>; // You can customize this UI
 };
 
-export default CallbackPage;
+function Callback() {
+  return (
+    <Suspense>
+      <CallbackPage />
+    </Suspense>
+  );
+}
+
+export default Callback;
