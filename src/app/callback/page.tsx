@@ -12,7 +12,7 @@ const CallbackPage = () => {
   const searchParams = useSearchParams(); // Access search params
 
   const SPOTIFY_CLIENT_ID = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID!;
-  const REDIRECT_URI = "http://localhost:3000/callback";
+  const REDIRECT_URI = "http://echo-nine-dusky.vercel.app/callback";
 
   useEffect(() => {
     const code = searchParams.get("code");
