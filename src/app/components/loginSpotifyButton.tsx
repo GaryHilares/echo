@@ -5,7 +5,7 @@ import { useAuth } from "../context/AuthContext";
 import { useRouter } from "next/navigation";
 
 const SPOTIFY_CLIENT_ID = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID!;
-const REDIRECT_URI = "http://localhost:3000/callback"; // Ensure this matches the callback route in Spotify app settings
+const REDIRECT_URI = "http://echo-nine-dusky.vercel.app/callback"; // Ensure this matches the callback route in Spotify app settings
 const SCOPES = "user-read-private user-read-email user-library-read";
 
 const SpotifyAuth = () => {
