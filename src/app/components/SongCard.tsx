@@ -43,4 +43,5 @@ function SongCard({
   );
 }
 
-export { SongData, SongCard };
+export type { SongData };
+export { SongCard };
